@@ -64,7 +64,7 @@ export default class Shop extends React.Component {
   async getFoodItems(){
     await fetch('https://simplygoodfoodapi.herokuapp.com/foodItems', {
       method: 'GET',
-      credentials: 'true',
+      credentials: 'include',
       // headers: {
       //   'authorization': `Bearer ${this.state.token}`,
       // },
