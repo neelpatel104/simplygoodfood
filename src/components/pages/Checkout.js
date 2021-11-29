@@ -139,7 +139,7 @@ export default class Checkout extends React.Component {
                 name={this.state.items[i][j].name}
                 totalPriceForItem={this.state.items[i][j].totalPriceForItem}
                 amountToBuy={this.state.items[i][j].amountToBuy}
-                pickup={this.state.items[i][j].pickup}
+                pickup={this.state.items[i][j].seller[0].address}
                 deliveryFee={this.state.items[i][j].deliveryFee}
                 delivery={this.state.items[i][j].delivery}
                 updateItemInCart={this.updateItemInCart}

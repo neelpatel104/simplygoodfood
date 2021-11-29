@@ -20,14 +20,10 @@ export default class Shop extends React.Component {
     
     let token = document.cookie.split('; ').find(row => row.startsWith('token'));
 
-    console.log("cookie " + document.cookie);
-    console.log("token " + token);
-    // alert("cookie " + document.cookie);
     if (token === undefined) {
       user = "";
     }
     token = token.split('=')[1];
-    console.log("token split   " + token);
 
     this.state = {
       user: user,
@@ -195,7 +191,6 @@ export default class Shop extends React.Component {
   }
 
   renderCards() {
-    console.log(this.state.items);
     if (this.state.items.length <= 0) {
       return (
         <h2>{this.state.message}</h2>

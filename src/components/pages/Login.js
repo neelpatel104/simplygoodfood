@@ -64,23 +64,11 @@ export default class Login extends React.Component {
       this.setState({ seller: false });
       
       document.cookie = "token=" + responseJSON.token;
-      console.log(document.cookie);
-      console.log(responseJSON);
+
       if (responseJSON.response.data.role === 'seller') {
         this.setState({ seller: true });
       }
-      console.log("logged in");
     })
-    // .then(responseJSON => responseJSON.response.data)
-    // .then(responseData => {
-    //   this.setState({ user: responseData.email });
-    //   this.setState({ seller: false });
-    //   console.log(responseData);
-    //   if (responseData.role === 'seller') {
-    //     this.setState({ seller: true });
-    //   }
-    //   console.log("logged in");
-    // })
     .catch(err => {
       console.log(err);
       throw new Error(err);
@@ -124,7 +112,6 @@ export default class Login extends React.Component {
       let user = {email: this.state.email, password: this.state.password };
       await this.loginUser(user);
       
-      console.log("logged in 2");
       this.setState({ loggedIn: true });
 
     } catch (err) {

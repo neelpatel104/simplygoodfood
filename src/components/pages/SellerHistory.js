@@ -257,7 +257,7 @@ class Order extends React.Component {
     return (
       <div>
         <h2>Date: {this.props.date}</h2>
-        <h3>Total: ${this.props.totalPrice}, Seller: {this.props.buyer}, Status: {this.props.status}</h3>
+        <h3>Total: ${this.props.totalPrice}, Buyer: {this.props.buyer}, Status: {this.props.status}</h3>
         <h4>Type: {this.props.type}, Address: {this.props.address}</h4>
         {this.props.isNotfulFilled && <button  className="itemButton" onClick={() => {
             this.props.fulfill(this.props.number);
