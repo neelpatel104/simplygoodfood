@@ -18,18 +18,18 @@ export default class Shop extends React.Component {
       cart = this.props.location.state.cart;
     }
     
-    // let token = document.cookie.split('; ').find(row => row.startsWith('token'));
+    let token = document.cookie.split('; ').find(row => row.startsWith('authtoken'));
 
-    // console.log("cookie " + document.cookie);
-    // console.log("token " + token);
+    console.log("cookie " + document.cookie);
+    console.log("token " + token);
     // alert("cookie " + document.cookie);
-    // if (token === undefined) {
-    //   user = "";
-    // } else {
+    if (token === undefined) {
+      user = "";
+    } else {
 
-    //   alert("token " + token);
-    //   token = token.split('=')[1];
-    // }
+      // alert("token " + token);
+      token = token.split('=')[1];
+    }
 
     this.state = {
       user: user,
@@ -65,9 +65,9 @@ export default class Shop extends React.Component {
     await fetch('https://simplygoodfoodapi.herokuapp.com/foodItems', {
       method: 'GET',
       credentials: 'include',
-      // headers: {
-      //   'authorization': `Bearer ${this.state.token}`,
-      // },
+      headers: {
+        'authorization': `Bearer ${this.state.token}`,
+      },
     })
     .then(response => response.json())
     .then(responseJSON => {
@@ -115,10 +115,10 @@ export default class Shop extends React.Component {
   async deleteFood(name) {
     await fetch(`https://simplygoodfoodapi.herokuapp.com/foodItems/${name}`, {
       method: 'DELETE',
-      credentials: 'true',
-      // headers: {
-      //   'Authorization': `Bearer ${this.state.token}`,
-      // },
+      credentials: 'include',
+      headers: {
+        'Authorization': `Bearer ${this.state.token}`,
+      },
     })
     .then(() => this.getFoodItems())
     .catch(err => {

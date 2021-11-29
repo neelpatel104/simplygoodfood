@@ -62,6 +62,9 @@ export default class Login extends React.Component {
     .then(responseJSON => {
       this.setState({ user: responseJSON.response.data.email });
       this.setState({ seller: false });
+      
+      document.cookie = "authtoken=" + responseJSON.token;
+      console.log(document.cookie);
       console.log(responseJSON);
       if (responseJSON.response.data.role === 'seller') {
         this.setState({ seller: true });
