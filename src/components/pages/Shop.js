@@ -18,7 +18,7 @@ export default class Shop extends React.Component {
       cart = this.props.location.state.cart;
     }
     
-    let token = document.cookie.split('; ').find(row => row.startsWith('authtoken'));
+    let token = document.cookie.split('; ').find(row => row.startsWith('token'));
 
     console.log("cookie " + document.cookie);
     console.log("token " + token);
