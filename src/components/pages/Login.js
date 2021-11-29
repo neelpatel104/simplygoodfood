@@ -70,10 +70,10 @@ export default class Login extends React.Component {
       this.setState({ loggedIn: true })
       console.log("logged in");
     })
-    .catch(err => {
-      console.log(err);
-      throw new Error(err);
-    })
+    // .catch(err => {
+      // console.log(err);
+      // throw new Error(err);
+    // })
   }
 
   /**
