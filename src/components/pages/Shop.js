@@ -25,11 +25,9 @@ export default class Shop extends React.Component {
     // alert("cookie " + document.cookie);
     if (token === undefined) {
       user = "";
-    } else {
-
-      // alert("token " + token);
-      token = token.split('=')[1];
     }
+    token = token.split('=')[1];
+    console.log("token split   " + token);
 
     this.state = {
       user: user,
@@ -44,7 +42,7 @@ export default class Shop extends React.Component {
       newAmount: "",
       newPickup: "",
       newDelivery: "",
-      // token: token,
+      token: token,
       message: "",
       checkout: false,
       logout: false,
