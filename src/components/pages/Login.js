@@ -67,13 +67,12 @@ export default class Login extends React.Component {
       if (responseData.role === 'seller') {
         this.setState({ seller: true });
       }
-      this.setState({ loggedIn: true })
       console.log("logged in");
     })
-    // .catch(err => {
-      // console.log(err);
-      // throw new Error(err);
-    // })
+    .catch(err => {
+      console.log(err);
+      throw new Error(err);
+    })
   }
 
   /**
@@ -109,13 +108,14 @@ export default class Login extends React.Component {
   async login(event) {
     event.preventDefault();
 
-    // try {
+    try {
       let user = {email: this.state.email, password: this.state.password };
       await this.loginUser(user);
-
-    // } catch (err) {
-      // alert("Invalid credentials");
-    // }
+      
+      this.setState({ loggedIn: true });
+    } catch (err) {
+      alert("Invalid credentials");
+    }
 
   }
 
