@@ -22,11 +22,13 @@ export default class Shop extends React.Component {
 
     console.log(document.cookie);
     console.log(token);
-
+    alert(document.cookie);
     if (token === undefined) {
       user = "";
+    } else {
+      alert(token);
+      token = token.split('=')[1];
     }
-    token = token.split('=')[1];
 
     this.state = {
       user: user,
