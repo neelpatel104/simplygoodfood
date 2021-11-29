@@ -65,10 +65,6 @@ export default class Shop extends React.Component {
     })
     .then(response => response.json())
     .then(responseJSON => {
-      if (responseJSON.length <= 0) {
-        this.setState({ message: "No items in the shop, sorry!" });
-      }
-
       let newItems = responseJSON;
       let newCart = this.state.cart;
       for (let i = 0; i < newItems.length; i++) {
@@ -95,6 +91,10 @@ export default class Shop extends React.Component {
         if (newItems[i].quantity <= 0) {
           newItems.splice(i, 1);
         }
+      }
+
+      if (newItems.length <= 0) {
+        this.setState({ message: "No items in the shop, sorry!" });
       }
       
       this.setState({items: newItems});
