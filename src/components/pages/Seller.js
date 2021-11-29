@@ -387,6 +387,7 @@ export default class Seller extends React.Component {
           <button className="itemButton" onClick={() => {
             // Calls the save method in Seller that was passed to Card as a prop with a quantity of 0
             this.props.save(this.props.name, this.state.price, 0, this.state.deliveryFee);
+            this.setState( { quantity: 0 });
             // Calls the discard method in Seller that was passed to Card as a prop
             // this.props.discard(this.props.name);
           }}>Discard</button>
