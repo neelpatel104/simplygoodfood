@@ -13,6 +13,7 @@ import Shop from './components/pages/Shop';
 import Checkout from './components/pages/Checkout';
 import Payment from './components/pages/Payment';
 import OrderHistory from './components/pages/OrderHistory';
+import SellerHistory from './components/pages/SellerHistory';
 
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
             <Route path={'/Seller'} component={Seller}></Route>
             <Route path={'/Shop'} component={Shop}></Route>
             <Route path={'/OrderHistory'} component={OrderHistory}></Route>
+            <Route path={'/SellerHistory'} component={SellerHistory}></Route>
             <Route path={'/Checkout'} component={Checkout}></Route>
             <Route path={'/Payment'} component={Payment}></Route>
             <Route path={'/'} component={Home}></Route>
