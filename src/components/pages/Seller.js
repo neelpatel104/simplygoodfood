@@ -43,6 +43,8 @@ export default class Seller extends React.Component {
       newDeliveryFee: "",
       // Authorization token value of the logged in user
       token: token,
+      //orderHistory
+      sellerHistory: false,
     
     };
 
@@ -54,6 +56,8 @@ export default class Seller extends React.Component {
     this.getFoodItems=this.getFoodItems.bind(this);
     this.addTestingValues=this.addTestingValues.bind(this);
     this.logOut=this.logOut.bind(this);
+    this.onSellerHistory=this.onSellerHistory.bind(this);
+
   }
 
   // Runs as soon as Seller mounts
@@ -212,6 +216,11 @@ export default class Seller extends React.Component {
     this.setState({user: ""});
   }
 
+
+  onSellerHistory() {
+    this.setState({ sellerHistory: true });
+  }
+
   /**
    * Renders html of all the food item cards
    * @returns html of all the food item cards
@@ -287,11 +296,22 @@ export default class Seller extends React.Component {
         );
     }
 
+    if (this.state.sellerHistory) {
+      return (
+        //Redirect to orderHistory.js with the user and their cart
+        <Redirect to={{ pathname: '/SellerHistory', state: { user: this.state.user } }} />
+      );
+    }
+
     return (
       <React.Fragment>
         <section className="content-container">
           <h1 className="pageheader">Seller Dashboard</h1>
           <br />
+
+          <button style={{ float: 'right'}} className="selectButton" onClick={this.onSellerHistory}>
+            Seller History
+            </button>
           <div className="rows" align="right"> 
             <button align="right" className="selectButton" onClick={this.logOut}>
               Log Out

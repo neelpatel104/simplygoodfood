@@ -190,6 +190,7 @@ export default class Shop extends React.Component {
   }
 
   renderCards() {
+    console.log(this.state.items);
     if (this.state.items.length <= 0) {
       return (
         <h2>{this.state.message}</h2>
