@@ -18,18 +18,18 @@ export default class Shop extends React.Component {
       cart = this.props.location.state.cart;
     }
     
-    // let token = document.cookie.split('; ').find(row => row.startsWith('token'));
-    // let token;
-    // console.log("cookie " + document.cookie);
-    // console.log("token " + token);
-    // alert("cookie " + document.cookie);
-    // if (token === undefined) {
-    //   user = "";
-    // } else {
+    let token = document.cookie.split('; ').find(row => row.startsWith('token'));
 
-    //   alert("token " + token);
-    //   token = token.split('=')[1];
-    // }
+    console.log("cookie " + document.cookie);
+    console.log("token " + token);
+    alert("cookie " + document.cookie);
+    if (token === undefined) {
+      user = "";
+    } else {
+
+      alert("token " + token);
+      token = token.split('=')[1];
+    }
 
     this.state = {
       user: user,
@@ -44,7 +44,7 @@ export default class Shop extends React.Component {
       newAmount: "",
       newPickup: "",
       newDelivery: "",
-      // token: token,
+      token: token,
       message: "",
       checkout: false,
       logout: false,
@@ -65,9 +65,9 @@ export default class Shop extends React.Component {
     await fetch('https://simplygoodfoodapi.herokuapp.com/foodItems', {
       method: 'GET',
       credentials: 'include',
-      // headers: {
-      //   'authorization': `Bearer ${this.state.token}`,
-      // },
+      headers: {
+        'authorization': `Bearer ${this.state.token}`,
+      },
     })
     .then(response => response.json())
     .then(responseJSON => {
@@ -116,9 +116,9 @@ export default class Shop extends React.Component {
     await fetch(`https://simplygoodfoodapi.herokuapp.com/foodItems/${name}`, {
       method: 'DELETE',
       credentials: 'include',
-      // headers: {
-      //   'Authorization': `Bearer ${this.state.token}`,
-      // },
+      headers: {
+        'Authorization': `Bearer ${this.state.token}`,
+      },
     })
     .then(() => this.getFoodItems())
     .catch(err => {
