@@ -69,10 +69,10 @@ export default class Login extends React.Component {
       }
       console.log("logged in");
     })
-    // .catch(err => {
-      // console.log(err);
-      // throw new Error(err);
-    // })
+    .catch(err => {
+      console.log(err);
+      throw new Error(err);
+    })
   }
 
   /**
@@ -108,13 +108,16 @@ export default class Login extends React.Component {
   async login(event) {
     event.preventDefault();
 
-    // try {
+    try {
       let user = {email: this.state.email, password: this.state.password };
       await this.loginUser(user);
+      
+      console.log("logged in 2");
+      this.setState({ loggedIn: true });
 
-    // } catch (err) {
-      // alert("Invalid credentials");
-    // }
+    } catch (err) {
+      alert("Invalid credentials");
+    }
 
   }
 
