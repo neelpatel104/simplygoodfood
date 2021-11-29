@@ -59,16 +59,25 @@ export default class Login extends React.Component {
       body: JSON.stringify(user)
     })
     .then(response => response.json())
-    .then(responseJSON => responseJSON.response.data)
-    .then(responseData => {
-      this.setState({ user: responseData.email });
+    .then(responseJSON => {
+      this.setState({ user: responseJSON.response.data.email });
       this.setState({ seller: false });
-      console.log(responseData);
-      if (responseData.role === 'seller') {
+      console.log(responseJSON);
+      if (responseJSON.response.data.role === 'seller') {
         this.setState({ seller: true });
       }
       console.log("logged in");
     })
+    // .then(responseJSON => responseJSON.response.data)
+    // .then(responseData => {
+    //   this.setState({ user: responseData.email });
+    //   this.setState({ seller: false });
+    //   console.log(responseData);
+    //   if (responseData.role === 'seller') {
+    //     this.setState({ seller: true });
+    //   }
+    //   console.log("logged in");
+    // })
     .catch(err => {
       console.log(err);
       throw new Error(err);
