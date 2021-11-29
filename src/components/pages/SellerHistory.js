@@ -213,11 +213,11 @@ export default class SellerHistory extends React.Component {
         <section className="content-container">
           <h1 className="pageheader">Order History</h1>
           <div className="rows">
-            <button style={{ float: 'right'}} className="selectButton" onClick={this.logOut}>
-            Log Out
-            </button>
             <button style={{ float: 'right'}} className="selectButton" onClick={this.onSeller}>
             Seller Dashboard
+            </button>
+            <button style={{ float: 'right'}} className="selectButton" onClick={this.logOut}>
+            Log Out
             </button>
           </div>
           <br />
