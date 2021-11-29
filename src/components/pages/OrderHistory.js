@@ -44,7 +44,7 @@ export default class OrderHistory extends React.Component {
   }
 
   async getFoodItems(){
-    await fetch(' https://simplygoodfoodapi.herokuapp.com/foodItems', {
+    await fetch('https://simplygoodfoodapi.herokuapp.com/foodItems', {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -68,7 +68,7 @@ export default class OrderHistory extends React.Component {
    * Fetch the orders of the user and load them into state.orders
    */
    async getOrders() {
-    await fetch(` https://simplygoodfoodapi.herokuapp.com/orders/${this.state.user}`, {
+    await fetch(`https://simplygoodfoodapi.herokuapp.com/orders/${this.state.user}`, {
       method: 'GET',
       credentials: 'include',
       headers: {

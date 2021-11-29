@@ -70,7 +70,7 @@ export default class Seller extends React.Component {
    * Fetch the food items of a specific seller and loads them into state.items
    */
   async getFoodItems() {
-    await fetch(`http://localhost:8080/foodItems/seller/${this.state.user}`, {
+    await fetch(`https://simplygoodfoodapi.herokuapp.com/foodItems/seller/${this.state.user}`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -98,7 +98,7 @@ export default class Seller extends React.Component {
    * @param {FoodItem} newItem the food item to add
    */
   async postFood(newItem) {
-    await fetch('http://localhost:8080/foodItems', {
+    await fetch('https://simplygoodfoodapi.herokuapp.com/foodItems', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -118,7 +118,7 @@ export default class Seller extends React.Component {
    * @param {String} name the name of the food item
    */
   async deleteFood(name) {
-    await fetch(`http://localhost:8080/foodItems/${name}`, {
+    await fetch(`https://simplygoodfoodapi.herokuapp.com/foodItems/${name}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: {
@@ -136,7 +136,7 @@ export default class Seller extends React.Component {
    * @param {FoodItem} newItem the food item with updated fields
    */
   async putFood(newItem) {
-    await fetch(`http://localhost:8080/foodItems`, {
+    await fetch(`https://simplygoodfoodapi.herokuapp.com/foodItems`, {
       method: 'PUT',
       credentials: 'include',
       headers: {

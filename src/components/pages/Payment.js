@@ -47,7 +47,7 @@ export default class Payment extends React.Component {
   }
 
   async postOrder(newOrder) {
-    await fetch('http://localhost:8080/orders', {
+    await fetch('https://simplygoodfoodapi.herokuapp.com/orders', {
       method: 'POST',
       credentials: 'include',
       headers: {

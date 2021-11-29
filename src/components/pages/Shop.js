@@ -55,7 +55,7 @@ export default class Shop extends React.Component {
   }
 
   async getFoodItems(){
-    await fetch('http://localhost:8080/foodItems', {
+    await fetch('https://simplygoodfoodapi.herokuapp.com/foodItems', {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -106,7 +106,7 @@ export default class Shop extends React.Component {
   }
 
   async deleteFood(name) {
-    await fetch(`http://localhost:8080/foodItems/${name}`, {
+    await fetch(`https://simplygoodfoodapi.herokuapp.com/foodItems/${name}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: {

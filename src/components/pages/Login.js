@@ -50,7 +50,7 @@ export default class Login extends React.Component {
    * @param {User} user the user to login as
    */
   async loginUser(user) {
-    await fetch(' https://simplygoodfoodapi.herokuapp.com/users/login', {
+    await fetch('https://simplygoodfoodapi.herokuapp.com/users/login', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -81,7 +81,7 @@ export default class Login extends React.Component {
    * @param {*} role the role of the user (buyer or seller)
    */
   async postUser(newUser, role) {
-    await fetch(` https://simplygoodfoodapi.herokuapp.com//users/register/${role}`, {
+    await fetch(`https://simplygoodfoodapi.herokuapp.com/users/register/${role}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
