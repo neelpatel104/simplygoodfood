@@ -19,6 +19,10 @@ export default class Shop extends React.Component {
     }
     
     let token = document.cookie.split('; ').find(row => row.startsWith('token'));
+
+    console.log(document.cookie);
+    console.log(token);
+
     if (token === undefined) {
       user = "";
     }
