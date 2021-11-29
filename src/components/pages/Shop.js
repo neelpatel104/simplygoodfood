@@ -19,7 +19,7 @@ export default class Shop extends React.Component {
     }
     
     // let token = document.cookie.split('; ').find(row => row.startsWith('token'));
-
+    // let token;
     // console.log("cookie " + document.cookie);
     // console.log("token " + token);
     // alert("cookie " + document.cookie);
@@ -44,7 +44,7 @@ export default class Shop extends React.Component {
       newAmount: "",
       newPickup: "",
       newDelivery: "",
-      token: token,
+      // token: token,
       message: "",
       checkout: false,
       logout: false,
@@ -116,9 +116,9 @@ export default class Shop extends React.Component {
     await fetch(`https://simplygoodfoodapi.herokuapp.com/foodItems/${name}`, {
       method: 'DELETE',
       credentials: 'include',
-      headers: {
-        'Authorization': `Bearer ${this.state.token}`,
-      },
+      // headers: {
+      //   'Authorization': `Bearer ${this.state.token}`,
+      // },
     })
     .then(() => this.getFoodItems())
     .catch(err => {
