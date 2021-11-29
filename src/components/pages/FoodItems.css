@@ -1,0 +1,79 @@
+.pageheader {
+    padding: 8px;
+}
+
+.itemColumns {
+    float: left;
+    width: 350px;
+    padding: 8px;
+}
+  
+.itemValues {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    color: green;
+    border-radius: 10px 10px 10px 10px;
+    height: 350px;
+    border: 1px solid rgba(60, 179, 113, .5);
+
+}
+  
+.itemValues:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+  
+.itemValues .col-header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+  
+.itemValues li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
+  
+.itemValues .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+  
+.itemButton {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    -webkit-transition: 1s;
+    transition: 1s;
+    margin: 0px 10px;
+}
+
+.itemButton:hover {
+    background-color:lawngreen;
+}
+
+.selectButton {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    -webkit-transition: 1s;
+    transition: 1s;
+    margin: 10px 10px;
+}
+
+.selectButton:hover {
+    background-color:lawngreen;
+}
